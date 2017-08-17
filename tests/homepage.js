@@ -1,5 +1,5 @@
 module.exports = {
-  "Demo test Google": function(client) {
+  "Demo Openfigi search": function(client) {
     client
       .url(`http://www.openfigi.com/search`)
       .waitForElementVisible(`button[type="submit"]`, 2000)
@@ -10,6 +10,7 @@ module.exports = {
       .click(`button[type="submit"]`)
       .pause(2000)
       .assert.containsText(`body`, `Rows per page`)
+      .saveScreenshot("./reports/search-result.png")
       .end();
   },
 };
